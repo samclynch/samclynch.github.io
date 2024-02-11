@@ -18,8 +18,22 @@
         </nav>
     </header>
     <main>
+        <head>
+            <meta charset="UTF-8">
+            <title>Crazy GitHub Pages</title>
+            <link rel="stylesheet" >
+          </head>
+          <body>
+            <div id="crazy">
+              <h1>Welcome to my page!</h1>
+              <p>Click the button below to add a random emoji to your page:</p>
+              <button id="addEmoji">Add Emoji</button>
+              <div id="emojiContainer"></div>
+            </div>
+          </body>
         <section id="about">
             <h2>About</h2>
+                <img src="/sam.jpg" alt="Profile picture" width="200" height="200">
             <p>Software Engineer</p>
         </section>
         <section id="projects">
@@ -35,5 +49,14 @@
     <footer>
         <p>&copy; 2024 Samuel Lynch. All rights reserved.</p>
     </footer>
+    <script>
+        document.getElementById('addEmoji').addEventListener('click', function() {
+          const emojiContainer = document.getElementById('emojiContainer');
+          const emoji = document.createElement('span');
+          emoji.className = 'emoji';
+          emoji.textContent = String.fromCodePoint(Math.floor(Math.random() * 128512) + 1);
+          emojiContainer.appendChild(emoji);
+        });
+      </script>
 </body>
 </html>
